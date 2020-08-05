@@ -31,6 +31,11 @@ Package app project with QA environment with it provision profile and upload to 
 fastlane ios Prod
 ```
 Package app project with Production environment with it provision profile and upload to web.
+### ios all
+```
+fastlane ios all
+```
+Run all enviroment with dev, QA, Prod to package to ipa.
 
 ----
 

@@ -21,7 +21,10 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
     build_app(
       configuration: "DEV", 
-      scheme: "DEV"
+      scheme: "DEV",
+      export_method: "development",
+      output_directory: "./builds/Dev",
+      output_name: "TryJenkins_dev.ipa"
     )
   end
 
@@ -29,7 +32,10 @@ platform :ios do
   lane :QA do 
     build_app(
       configuration: "QA", 
-      scheme: "QA"
+      scheme: "QA",
+      export_method: "ad-hoc",
+      output_directory: "./builds/QA",
+      output_name: "TryJenkins_QA.ipa"
     )
   end
 
@@ -37,7 +43,17 @@ platform :ios do
   lane :Prod do 
     build_app(
       configuration: "PROD",
-      scheme: "PROD"
+      scheme: "PROD",
+      export_method: "enterprise",
+      output_directory: "./builds/Prod",
+      output_name: "TryJenkins_Prod.ipa"
     )
+  end
+
+  desc "Run all enviroment with dev, QA, Prod to package to ipa."
+  lane :all do
+    sh "bundler exec fastlane dev";
+    sh "bundler exec fastlane QA";
+    sh "bundler exec fastlane Prod";
   end
 end
