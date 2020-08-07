@@ -475,7 +475,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinwei.inhouse.TryJenkins;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Prod TryJenkins";
+				PROVISIONING_PROFILE_SPECIFIER = "match InHouse com.kinwei.inhouse.TryJenkins";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
 				Server_URL = ImProdServer;
@@ -644,7 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinwei.TryJenkins.qa;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "QA TryJenkins";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.kinwei.TryJenkins.*";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = QA;
 				SWIFT_VERSION = 5.0;
 				Server_URL = ImQAServer;

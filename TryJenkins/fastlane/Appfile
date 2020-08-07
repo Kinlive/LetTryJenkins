@@ -1,16 +1,5 @@
-app_identifier("com.kinwei.TryJenkins.dev") # The bundle identifier of your app
+app_identifier("com.kinwei.TryJenkins.test") # The bundle identifier of your app
 apple_id("kin.wei@tpisoftware.com") # Your Apple email address
 
-for_lane :Dev do 
-  app_identifier 'com.kinwei.TryJenkins.dev'
-end
-
-for_lane :QA do 
-  app_identifier 'com.kinwei.TryJenkins.qa'
-end
-
-for_lane :Prod do
-  app_identifier 'com.kinwei.TryJenkins'
-end
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile

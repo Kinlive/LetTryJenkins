@@ -5,22 +5,67 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000375">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000554">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: bundler exec fastlane dev" time="38.904876">
+      <testcase classname="fastlane.lanes" name="01: Switch to ios dev_ipa lane" time="0.000334">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: bundler exec fastlane QA" time="27.920381">
+      <testcase classname="fastlane.lanes" name="02: Switch to ios match_dev lane" time="0.000286">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: bundler exec fastlane Prod" time="53.573517">
+      <testcase classname="fastlane.lanes" name="03: match" time="4.572744">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: build_app" time="29.177079">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: Switch to ios qa_ipa lane" time="0.000465">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: Switch to ios match_adhoc lane" time="0.000318">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: match" time="4.51242">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: build_app" time="23.889565">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: Switch to ios inhouse_ipa lane" time="0.000477">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: Switch to ios match_enterprise lane" time="0.000631">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: match" time="4.943108">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: build_app" time="24.454307">
         
       </testcase>
     

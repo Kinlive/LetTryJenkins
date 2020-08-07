@@ -17,8 +17,9 @@ default_platform(:ios)
 
 platform :ios do
   desc "Package app project with Dev environment with it provision profile and upload to shared web page."
-  lane :dev do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :dev_ipa do
+    # first match provision profile
+    match_dev
     build_app(
       configuration: "DEV", 
       scheme: "DEV",
@@ -29,7 +30,9 @@ platform :ios do
   end
 
   desc "Package app project with QA environment with it provision profile and upload to shared web page."
-  lane :QA do 
+  lane :qa_ipa do  
+    # first match provision profile
+    match_adhoc
     build_app(
       configuration: "QA", 
       scheme: "QA",
@@ -40,7 +43,9 @@ platform :ios do
   end
 
   desc "Package app project with Production environment with it provision profile and upload to web."
-  lane :Prod do 
+  lane :inhouse_ipa do 
+    # first match provision profile
+    match_enterprise
     build_app(
       configuration: "PROD",
       scheme: "PROD",
@@ -52,8 +57,36 @@ platform :ios do
 
   desc "Run all enviroment with dev, QA, Prod to package to ipa."
   lane :all do
-    sh "bundler exec fastlane dev";
-    sh "bundler exec fastlane QA";
-    sh "bundler exec fastlane Prod";
+    dev_ipa
+    qa_ipa
+    inhouse_ipa
   end
+
+  desc "Override match development use specified identifier to generate provision."
+  lane :match_dev do 
+    match(
+    type: 'development',
+    readonly: true,
+    app_identifier: 'com.kinwei.TryJenkins.*'
+    )
+  end
+  
+  desc "Override match adhoc use specified identifier to generate provision."
+  lane :match_adhoc do 
+  match(
+    type: 'adhoc',
+    readonly: true,
+    app_identifier: 'com.kinwei.TryJenkins.*'
+  )
+  end
+
+  desc "Override match enterprise use specified identifier to generate provision."
+  lane :match_enterprise do 
+  match(
+    type: 'enterprise',
+    readonly: true,
+    app_identifier: 'com.kinwei.inhouse.TryJenkins'
+  )
+  end
+
 end

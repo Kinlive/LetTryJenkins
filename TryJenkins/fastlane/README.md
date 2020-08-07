@@ -16,19 +16,19 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios dev
+### ios dev_ipa
 ```
-fastlane ios dev
+fastlane ios dev_ipa
 ```
 Package app project with Dev environment with it provision profile and upload to shared web page.
-### ios QA
+### ios qa_ipa
 ```
-fastlane ios QA
+fastlane ios qa_ipa
 ```
 Package app project with QA environment with it provision profile and upload to shared web page.
-### ios Prod
+### ios inhouse_ipa
 ```
-fastlane ios Prod
+fastlane ios inhouse_ipa
 ```
 Package app project with Production environment with it provision profile and upload to web.
 ### ios all
@@ -36,6 +36,21 @@ Package app project with Production environment with it provision profile and up
 fastlane ios all
 ```
 Run all enviroment with dev, QA, Prod to package to ipa.
+### ios match_dev
+```
+fastlane ios match_dev
+```
+Override match development use specified identifier to generate provision.
+### ios match_adhoc
+```
+fastlane ios match_adhoc
+```
+Override match adhoc use specified identifier to generate provision.
+### ios match_enterprise
+```
+fastlane ios match_enterprise
+```
+Override match enterprise use specified identifier to generate provision.
 
 ----
 
