@@ -16,41 +16,64 @@
 default_platform(:ios)
 
 platform :ios do
+
+  before_all do
+
+  end
+
   desc "Package app project with Dev environment with it provision profile and upload to shared web page."
-  lane :dev_ipa do
+  lane :dev_ipa do |options| # options: {folderName: String, ... (use more key:value on called 'fastlane lane key:value'.) }
     # first match provision profile
     match_dev
+
+    output_folder="development"
+    if options[:folderName] != nil
+      output_folder=options[:folderName]
+    end
+
     build_app(
-      configuration: "DEV", 
+      configuration: "DEV",
       scheme: "DEV",
       export_method: "development",
-      output_directory: "./builds/Dev",
+      output_directory: "./builds/#{output_folder}",
       output_name: "TryJenkins_dev.ipa"
     )
   end
 
   desc "Package app project with QA environment with it provision profile and upload to shared web page."
-  lane :qa_ipa do  
+  lane :qa_ipa do |options|
     # first match provision profile
     match_adhoc
+
+    output_folder="adhoc"
+    if options[:folderName] != nil
+      output_folder=options[:folderName]
+    end
+
     build_app(
-      configuration: "QA", 
+      configuration: "QA",
       scheme: "QA",
       export_method: "ad-hoc",
-      output_directory: "./builds/QA",
+      output_directory: "./builds/#{output_folder}",
       output_name: "TryJenkins_QA.ipa"
     )
   end
 
   desc "Package app project with Production environment with it provision profile and upload to web."
-  lane :inhouse_ipa do 
+  lane :inhouse_ipa do |options|
     # first match provision profile
     match_enterprise
+
+    output_folder="inhouse"
+    if options[:folderName] != nil
+      output_folder=options[:folderName]
+    end
+
     build_app(
       configuration: "PROD",
       scheme: "PROD",
       export_method: "enterprise",
-      output_directory: "./builds/Prod",
+      output_directory: "./builds/#{output_folder}",
       output_name: "TryJenkins_Prod.ipa"
     )
   end
@@ -63,16 +86,16 @@ platform :ios do
   end
 
   desc "Override match development use specified identifier to generate provision."
-  lane :match_dev do 
+  lane :match_dev do
     match(
     type: 'development',
     readonly: true,
     app_identifier: 'com.kinwei.TryJenkins.*'
     )
   end
-  
+
   desc "Override match adhoc use specified identifier to generate provision."
-  lane :match_adhoc do 
+  lane :match_adhoc do
   match(
     type: 'adhoc',
     readonly: true,
@@ -81,7 +104,7 @@ platform :ios do
   end
 
   desc "Override match enterprise use specified identifier to generate provision."
-  lane :match_enterprise do 
+  lane :match_enterprise do
   match(
     type: 'enterprise',
     readonly: true,
@@ -89,4 +112,17 @@ platform :ios do
   )
   end
 
+  after_all do |lane|
+    notification(
+      subtitle: "Building Finished",
+      message:"Fastlane finished '#{lane}' successfully"
+    )
+  end
+
+  error do |lane, exception|
+    notification(
+      subtitle: "Building Failed",
+      message:"Fastlane '#{lane}' errored"
+    )
+  end
 end

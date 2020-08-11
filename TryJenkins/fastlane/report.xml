@@ -5,67 +5,72 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000554">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.000436">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: Switch to ios dev_ipa lane" time="0.000334">
+      <testcase classname="fastlane.lanes" name="01: Switch to ios dev_ipa lane" time="0.000351">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: Switch to ios match_dev lane" time="0.000286">
+      <testcase classname="fastlane.lanes" name="02: Switch to ios match_dev lane" time="0.000339">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: match" time="4.572744">
+      <testcase classname="fastlane.lanes" name="03: match" time="4.632489">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: build_app" time="29.177079">
+      <testcase classname="fastlane.lanes" name="04: build_app" time="35.009388">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: Switch to ios qa_ipa lane" time="0.000465">
+      <testcase classname="fastlane.lanes" name="05: Switch to ios qa_ipa lane" time="0.000509">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: Switch to ios match_adhoc lane" time="0.000318">
+      <testcase classname="fastlane.lanes" name="06: Switch to ios match_adhoc lane" time="0.000315">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: match" time="4.51242">
+      <testcase classname="fastlane.lanes" name="07: match" time="4.899279">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: build_app" time="23.889565">
+      <testcase classname="fastlane.lanes" name="08: build_app" time="18.278492">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: Switch to ios inhouse_ipa lane" time="0.000477">
+      <testcase classname="fastlane.lanes" name="09: Switch to ios inhouse_ipa lane" time="0.000301">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: Switch to ios match_enterprise lane" time="0.000631">
+      <testcase classname="fastlane.lanes" name="10: Switch to ios match_enterprise lane" time="0.000279">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: match" time="4.943108">
+      <testcase classname="fastlane.lanes" name="11: match" time="4.843759">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: build_app" time="24.454307">
+      <testcase classname="fastlane.lanes" name="12: build_app" time="11.166881">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: notification" time="0.326731">
         
       </testcase>
     
